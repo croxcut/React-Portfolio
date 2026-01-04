@@ -23,10 +23,12 @@ type TestPageProps = {
 function TestPage({ user }: TestPageProps) {
   return (
     <>
+      <div className={styles.container}>
         <h1 className= {styles.header}>Hello, {user.name}</h1>
         <pre className= {styles.description}>
             Description: {user.description}
         </pre>
+      </div>
     </>
   );
 }
