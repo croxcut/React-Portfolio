@@ -30,7 +30,7 @@ function TestPage({ user }: TestPageProps) {
         <pre className= {styles.description}>
             Description: {user.description}
         </pre>
-        <button onClick={handle_click}>Click me</button>
+        <button className={styles.button} onClick={handle_click}>Click me</button>
       </div>
     </>
   );
