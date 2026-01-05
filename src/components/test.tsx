@@ -21,6 +21,8 @@ type TestPageProps = {
 };
 
 function TestPage({ user }: TestPageProps) {
+  const handle_click = () => console.log("Shit");
+  
   return (
     <>
       <div className={styles.container}>
@@ -28,6 +30,7 @@ function TestPage({ user }: TestPageProps) {
         <pre className= {styles.description}>
             Description: {user.description}
         </pre>
+        <button onClick={handle_click}>Click me</button>
       </div>
     </>
   );
