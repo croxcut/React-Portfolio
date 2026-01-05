@@ -21,8 +21,10 @@ type TestPageProps = {
 };
 
 function TestPage({ user }: TestPageProps) {
-  const handle_click = () => console.log("Shit");
-  
+  const handle_click = (name: string) => {
+    console.log(`${name}`);
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -30,7 +32,7 @@ function TestPage({ user }: TestPageProps) {
         <pre className= {styles.description}>
             Description: {user.description}
         </pre>
-        <button className={styles.button} onClick={handle_click}>Click me</button>
+        <button className={styles.button} onClick={() => handle_click(user.name)}>Click me</button>
       </div>
     </>
   );
