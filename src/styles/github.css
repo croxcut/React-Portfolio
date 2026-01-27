@@ -1,0 +1,48 @@
+.github_contaier {
+  border-radius: 12px;
+  background-color: #BFC9D1;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for card */
+.github_contaier:hover {
+  transform: translateY(-5px);
+}
+
+/* Heading styling */
+.github_contaier h2 {
+  margin-bottom: 20px;
+  color: #25343F;
+  font-size: 1.5rem;
+}
+
+/* Make GitHubCalendar squares slightly rounded and smaller on mobile */
+/* .github_contaier .react-calendar-heatmap .react-calendar-heatmap-block {
+  border-radius: 3px;
+  transition: transform 0.2s ease;
+} */
+
+.github_contaier .react-calendar-heatmap .react-calendar-heatmap-block:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 480px) {
+  ._contaier {
+    width: 95%;
+    padding: 15px;
+  }
+  .github-container .react-calendar-heatmap .react-calendar-heatmap-block {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
