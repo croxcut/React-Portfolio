@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+* {
+    background-color: #495867;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.def_body {
+    width: auto;
+    height: 100vh; /* fill full viewport */
+    overflow: hidden; /* prevent scrollbars from moving shapes */
+    position: relative;
+
+    /* optional gradient overlay */
+    background: linear-gradient(135deg, #495867, #577590);
+}
+
+/* Shape animation container */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: floatShapes linear infinite;
+    z-index: 1; /* <- make sure shapes are behind */
+}
+
+/* Keyframes for floating shapes */
+@keyframes floatShapes {
+    0% {
+        transform: translateY(100vh) rotate(0deg); /* start offscreen at bottom */
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg); /* go all the way above top */
+        opacity: 0.7;
+    }
+}
+
+.app {
+    width: 80%;
+    margin: 0 auto;
+    z-index: 10; /* stays above shapes */
+    position: relative; /* ensure z-index applies */
+}
