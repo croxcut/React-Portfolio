@@ -3,13 +3,17 @@ import "../styles/github.css";
 
 function GitHubContributions() {
   return (
-    <div className="github_contaier">
-      <h2>GitHub Contributions :D*</h2>
+    <div className="github-container">
+      <h2>🚀 My GitHub Contributions</h2>
       <GitHubCalendar
-        username="croxcut" 
-        blockSize={15}
+        username="croxcut"
+        blockSize={16}
         blockMargin={4}
-        fontSize={16}
+        fontSize={14}
+        theme={{
+          light: ['#EAEFEF', '#FF9B51'], // gradient from light → orange
+          dark: ['#EAEFEF', '#FF9B51'],  // same for dark mode
+        }}
       />
     </div>
   );

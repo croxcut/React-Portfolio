@@ -3,17 +3,34 @@ import "../styles/education.css";
 
 function Education() {
   const education = [
-    "Our Lady of Fatima University",
-    "Metropolitan Institute of Arts And Sciences",
-    "Kalayaan National High School",
-    "Bagong Silang Elementary School",
+    {
+      school: "Our Lady of Fatima University",
+      startYear: 2022,
+      endYear: "Present",
+    },
+    {
+      school: "Metropolitan Institute of Arts And Sciences",
+      startYear: 2020,
+      endYear: 2022,
+    },
+    {
+      school: "Kalayaan National High School",
+      startYear: 2016,
+      endYear: 2020,
+    },
+    {
+      school: "Bagong Silang Elementary School",
+      startYear: 2010,
+      endYear: 2016,
+    },
   ];
 
   // Track which items are visible (for staggered animation)
-  const [visible, setVisible] = useState<boolean[]>(education.map(() => false));
+  const [visible, setVisible] = useState<boolean[]>(
+    education.map(() => false)
+  );
 
   useEffect(() => {
-    // Animate items one by one
     education.forEach((_, i) => {
       setTimeout(() => {
         setVisible((prev) => {
@@ -21,7 +38,7 @@ function Education() {
           newState[i] = true;
           return newState;
         });
-      }, i * 150); // 150ms delay per item
+      }, i * 100);
     });
   }, []);
 
@@ -29,12 +46,16 @@ function Education() {
     <div className="_contaier">
       <h2>Education</h2>
       <ul>
-        {education.map((school, index) => (
+        {education.map((item, index) => (
           <li
             key={index}
             className={`educ-item ${visible[index] ? "show" : ""}`}
           >
-            <p>{school}</p>
+            <p className="school">{item.school}</p>
+            <br></br>
+            <span className="year">
+              {item.startYear} – {item.endYear}
+            </span>
           </li>
         ))}
       </ul>
